@@ -1,0 +1,18 @@
+.image
+{
+	position: absolute;
+	top: 0;
+	width: 70%;
+	left: 5%;
+}
+
+.img-container
+{
+	display: inline-block;
+	width: 40%;
+	padding-top: 40%;
+	position: relative;
+	background-color:rgb(181, 132, 171);
+	border-radius: 12px;
+	margin: 5%;
+}

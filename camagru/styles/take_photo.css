@@ -1,0 +1,119 @@
+#main
+{
+	background-color:rgb(181, 132, 171);
+	font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 25px;
+	display: inline-block;
+	margin-top: 100px;
+	margin-left: 50px;
+	padding: 10px;
+	border-radius: 12px;
+	width: 65%;
+	height: 67%;
+	position:relative;
+	text-align: center;
+}
+
+#side
+{
+	background-color:rgb(181, 132, 171);
+	font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 25px;
+	margin-top: 100px;
+	margin-right: 50px;
+	padding: 10px;
+	border-radius: 12px;
+	width: 20%;
+	float: right;
+	height: 67%;
+}
+
+#video
+{
+	width: 660px;
+	position: absolute;
+	left: calc(50% - 330px);
+	bottom: 10px;
+}
+
+#canvas
+{
+	position: absolute;
+	bottom: 10px;
+	left: 14.5%;
+}
+
+#side-img
+{
+	width: 50%;
+}
+
+#photo-button
+{
+	background-color: rgb(227, 188, 188);
+	border-radius: 12px;
+	font-size:25px;
+	border:0;
+	margin-top:10px;
+	margin-bottom:10px;
+	position: relative;
+	top: 95px;
+	left: -80px;
+}
+
+.sticker
+{
+	position: absolute;
+	width: 90px;
+	z-index: 2;
+}
+
+#stick-1
+{
+	left: 30%;
+}
+
+#stick-2
+{
+	left: 47%;
+}
+
+#stick-3
+{
+	left: 64%;
+}
+
+#upload-form
+{
+	font-size:25px;
+	border:0;
+	position: relative;
+	top: 95px;
+	left: 80px;
+	display: inline;
+}
+
+#choose-file, #upload-image
+{
+	background-color: rgb(227, 188, 188);
+	border-radius: 12px;
+	font-size:25px;
+	border:0;
+	margin-top:10px;
+	margin-bottom:10px;
+	color: rgba(0,0,0,0.847);
+	padding-left: 7;
+	padding-right: 7;
+	padding-bottom: 2;
+	padding-top: 1;
+	position: relative;
+}
+#file
+{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}

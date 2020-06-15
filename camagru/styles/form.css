@@ -30,3 +30,15 @@ body
 {
 	text-align: center;
 }
+
+#bad-entry
+{
+	font-size:16px;
+	color:rgb(240, 67, 67);
+}
+
+#good-entry
+{
+	font-size:16px;
+	color:rgb(141, 214, 141);
+}

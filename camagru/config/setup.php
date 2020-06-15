@@ -8,10 +8,11 @@
 	(
 		`user_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		`login` VARCHAR(64) NOT NULL,
-		`passwd` VARCHAR(64) NOT NULL,
+		`passwd` VARCHAR(128) NOT NULL,
 		`mail` VARCHAR(64) NOT NULL,
 		`token` VARCHAR(64),
 		`notif` BOOLEAN DEFAULT TRUE,
+		`active` BOOLEAN NOT NULL DEFAULT FALSE
 	);
 	CREATE TABLE `images`
 	(
