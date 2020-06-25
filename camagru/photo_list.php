@@ -26,6 +26,7 @@
 		for (let i = 0; i < comment_form.length; i++)
 		{
 			comment_form[i].style.top = comment_form[i].previousSibling.height + 20;
+			// add comment reload ??????
 		}
 	};
 	$.ajax({
@@ -64,7 +65,7 @@
 					comment.maxLength = "256";
 					img.onload = function() {
 						this.nextSibling.style.top = this.height + 20;
-						this.nextElementSibling.children[1].style.height = document.getElementsByClassName('img-container')[0].offsetHeight - parseInt(this.nextSibling.style.top, 10) - 19;
+						this.nextElementSibling.children[1].style.height = document.getElementsByClassName('img-container')[0].offsetHeight - parseInt(this.nextSibling.style.top, 10) - 24;
 						}
 					form.appendChild(comment);
 
