@@ -28,7 +28,7 @@
 	(
 		`user_id` INT NOT NULL,
 		`image_id` INT NOT NULL,
-		`comment` VARCHAR(64) NOT NULL
+		`comment` VARCHAR(256) NOT NULL
 	);";
 	$pdo->exec($requ);
 ?>

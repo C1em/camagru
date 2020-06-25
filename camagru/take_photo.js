@@ -71,7 +71,8 @@ function print_side_photos()
 				for(var i = 0; i < imgs.length; i++)
 				{
 					var img = document.createElement("img");
-					img.src = "http://localhost:8080/images/" + imgs[imgs.length - 1 - i]['image_id'] + ".png";
+					//localIP is set in take_photo.php
+					img.src = "http://" + localIP + ":8080/images/" + imgs[imgs.length - 1 - i]['image_id'] + ".png";
 					img.id = "side-img";
 					sideElem.appendChild(img);
 					if (i % 2 == 1 && ((i + 3)/ 2) * (2 * window.innerWidth / 27 ) >= 669)
@@ -95,7 +96,6 @@ function upload_photo()
 				url: 'save_photo.php',
 				data: {image: reader.result},
 				success: function(response){
-					console.log(response);
 					print_side_photos();
 				}
 			});

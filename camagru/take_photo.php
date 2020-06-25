@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/top_bar.css">
 	<link rel="stylesheet" type="text/css" href="styles/take_photo.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script> var localIP = <?php echo "\"$localIP\""; ?>;</script>
 	<script src="take_photo.js"></script>
 </head>
 <body style="margin:0px;">

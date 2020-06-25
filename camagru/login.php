@@ -44,7 +44,11 @@
 				data: {password: passwdInput, login : loginInput},
 				success: function(response){
 					if (response == "1")
-						window.location.href = "http://localhost:8080";
+					{
+						var localIP = <?php echo "\"$localIP\""; ?>;
+						console.log(localIP);
+						window.location.href = "http://" + localIP + ":8080";
+					}
 					else if (!document.getElementById("bad-entry"))
 					{
 						let badEntry = document.createElement("div");

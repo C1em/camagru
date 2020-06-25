@@ -48,7 +48,7 @@
 		$tk = md5(rand(1, 1000));
 		$pdo_p = $pdo->prepare("UPDATE users SET mail = :email, token = :token, active = 0 WHERE user_id = :user_id");
 		$pdo_p->execute(array(':email' => $_POST['new_mail'], ':token' => $tk, ':user_id' => $_SESSION['user_id']));
-		$message = wordwrap("http://localhost:8080/verify.php?email=" . $_POST['new_mail'] . "&token=" . $tk, 70, "\r\n");
+		$message = wordwrap("http://" . $localIP . ":8080/verify.php?email=" . $_POST['new_mail'] . "&token=" . $tk, 70, "\r\n");
 		$mail_sent = mail($_POST['new_mail'], "camagru email validation", $message, "From:noreply@camagru.com");
 		header("Location: email.html");
 		exit;

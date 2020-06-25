@@ -1,9 +1,52 @@
 .image
 {
 	position: absolute;
-	top: 0;
-	width: 70%;
+	top: 12px;
+	width: 90%;
 	left: 5%;
+}
+
+.comment-section
+{
+	font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 25px;
+	display: inline-block;
+	margin-top: 100px;
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	margin: 0;
+}
+
+.comment-list
+{
+	overflow: scroll;
+	-ms-overflow-style: none;
+	overflow-wrap: break-word;
+}
+
+.comment-list::-webkit-scrollbar
+{
+	display: none;
+}
+
+.new-comment
+{
+	width: 80%;
+}
+
+.comment
+{
+	margin : 16px;
+}
+
+.comment-button
+{
+	background-color: rgb(227, 188, 188);
+	border-radius: 12px;
+	font-size:18px;
+	border:0;
+	margin-left : 11px;
 }
 
 .img-container
@@ -15,4 +58,9 @@
 	background-color:rgb(181, 132, 171);
 	border-radius: 12px;
 	margin: 5%;
+}
+
+.comment-form
+{
+	margin : 0;
 }

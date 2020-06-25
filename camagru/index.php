@@ -17,7 +17,7 @@
 	?>
 	</div>
 	<div id="photo-list">
-		<?php include 'photo_list.php' ?>
+		<?php include 'photo_list.php'; ?>
 	</div>
 </body>
 </html>

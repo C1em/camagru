@@ -1,4 +1,5 @@
 <?php
+	$localIP = getHostByName(getHostName());
 	$DB_DSN = "mysql:host=localhost:3306;dbname=camagru";
 	$DB_USER = "admin";
 	$DB_PASSWORD = "admin";

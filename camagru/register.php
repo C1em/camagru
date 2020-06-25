@@ -45,11 +45,13 @@
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$pdo_p = $pdo->prepare("INSERT INTO users (login, passwd, mail, token) VALUES (:login, :password, :email, :token)");
 		$pdo_p->execute(array(':login' => $_POST['login'],':password' => $password, ':email' => $_POST['email'], ':token' => $tk));
-		$message = wordwrap("http://localhost:8080/verify.php?email=" . $_POST['email'] . "&token=" . $tk, 70, "\r\n");
+		$message = wordwrap("http://" . $localIP . ":8080/verify.php?email=" . $_POST['email'] . "&token=" . $tk, 70, "\r\n");
 		$mail_sent = mail($_POST['email'], "camagru email validation", $message, "From:noreply@camagru.com");
 		if ($mail_sent === FALSE)
 		{
 			echo "-6";
+			$pdo_p = $pdo->prepare("DELETE FROM users WHERE login = :login");
+			$pdo_p->execute(array(':login' => $_POST['login']));
 			exit;
 		}
 		echo "1";

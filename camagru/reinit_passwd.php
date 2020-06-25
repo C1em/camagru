@@ -22,7 +22,7 @@
 		$passwd = password_hash($_POST['new_passwd'], PASSWORD_DEFAULT);
 		$pdo_p = $pdo->prepare("UPDATE users SET token = :token WHERE mail = :email");
 		$pdo_p->execute(array(':email' => $_POST['email'], ':token' => $tk));
-		$message = wordwrap("http://localhost:8080/passwd_verify.php?email=" . $_POST['email'] . "&token=" . $tk . "&passwd=" . $passwd, 70, "\r\n");
+		$message = wordwrap("http://" . $localIP . ":8080/passwd_verify.php?email=" . $_POST['email'] . "&token=" . $tk . "&passwd=" . $passwd, 70, "\r\n");
 		$mail_sent = mail($_POST['email'], "camagru password change", $message, "From:noreply@camagru.com");
 		header("Location: email.html");
 		exit;
