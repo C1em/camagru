@@ -22,7 +22,7 @@
 	CREATE TABLE `likes`
 	(
 		`user_id` INT NOT NULL,
-		`image_id` INT NOT NULL
+		`image_id` INT NOT NULL,
 	);
 	CREATE TABLE `comments`
 	(

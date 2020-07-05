@@ -70,13 +70,20 @@ function print_side_photos()
 				var sideElem = document.getElementById("side");
 				for(var i = 0; i < imgs.length; i++)
 				{
-					var img = document.createElement("img");
+					let img_container = document.createElement('div');
+					img_container.classList.add('img-container');
+					let img = document.createElement("img");
+					let cross = document.createElement('div');
+					cross.innerHTML = '&times;';
+					cross.classList.add('cross');
+					cross.onclick = del_img;
 					//localIP is set in take_photo.php
 					img.src = "http://" + localIP + ":8080/images/" + imgs[imgs.length - 1 - i]['image_id'] + ".png";
-					img.id = "side-img";
-					sideElem.appendChild(img);
-					if (i % 2 == 1 && ((i + 3)/ 2) * (2 * window.innerWidth / 27 ) >= 669)
-						break;
+					img.classList.add('side-img');
+					img.id = imgs[imgs.length - 1 - i]['image_id'];
+					img_container.appendChild(img);
+					img_container.appendChild(cross);
+					sideElem.appendChild(img_container);
 				}
 			}
 	});
@@ -101,4 +108,17 @@ function upload_photo()
 			});
 		}
 	}
+}
+
+function del_img()
+{
+	let img_id = this.previousElementSibling.id;
+	$.ajax({
+		type: 'POST',
+		url: 'del_photo.php',
+		data: {img_id : img_id},
+		success: function(response){
+			print_side_photos();
+		}
+	});
 }

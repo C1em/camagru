@@ -32,7 +32,7 @@
 
 .new-comment
 {
-	width: 80%;
+	width: calc(100% - 140px);
 }
 
 .comment
@@ -63,4 +63,12 @@
 .comment-form
 {
 	margin : 0;
+	vertical-align: top;
+	display: inline;
+}
+
+.like-btn
+{
+	height: 25px;
+	margin-right: 5px;
 }
