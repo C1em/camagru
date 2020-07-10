@@ -60,16 +60,23 @@
 					var like_btn = document.createElement("img");
 					like_btn.classList.add("like-btn");
 					like_btn.onclick = function(){
-						if (this.getAttribute('src') != "like_btn.png")
-							return;
+						let liked = 0;
+						if (this.getAttribute('src') == "like_btn_liked.png")
+							liked = 1;
 						let img_id = this.parentElement.previousElementSibling.id;
 						$.ajax({
 							type: 'POST',
 							url: 'add_like.php',
-							data: {img_id: img_id},
-							success: function(response){}
+							data: {img_id: img_id, liked: liked},
+							success: function(response){
+								if(response == '-1')
+									window.location.href = "login.php";
+							}
 						})
-						this.src = "like_btn_liked.png";
+						if(liked == 0)
+							this.src = "like_btn_liked.png";
+						else
+							this.src = "like_btn.png";
 					};
 
 					var comment = document.createElement("input");
@@ -94,6 +101,8 @@
 							data: {com : new_com, img_id : image_id},
 							success: function(response)
 							{
+								if(response == '-1')
+									window.location.href = "login.php";
 								load_comment(image_id);
 							}
 						});
@@ -118,14 +127,16 @@
 		{
 			let likes_btn = document.getElementsByClassName('like-btn');
 			let likes = JSON.parse(response);
-			let img_id = likes[0]['image_id'];
+			let img_id = 0;
+			if (likes.length != 0)
+				img_id = likes[0]['image_id'];
 			let j = 0;
 			for(let i = 0; i < likes_btn.length; i++)
 			{
 				if (img_id == likes_btn[i].parentElement.previousElementSibling.id)
 				{
 					likes_btn[i].src = 'like_btn_liked.png';
-					while (++j < likes.length )
+					while (++j < likes.length)
 					{
 						img_id = likes[j]['image_id'];
 						if (img_id != likes[j - 1]['image_id'])
