@@ -20,6 +20,7 @@ Camagru is an "instagram like" website on which you can take photos, add sticker
 - Take pictures
 - Upload device's local pictures
 - Add stickers on pictures
+- Delete pictures
 
 > Social
 
