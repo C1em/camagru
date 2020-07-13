@@ -12,6 +12,7 @@
 	height: 67%;
 	position:relative;
 	text-align: center;
+	box-shadow: 0 0 20px 2px #00000052;
 }
 
 #side
@@ -26,6 +27,7 @@
 	width: 20%;
 	float: right;
 	height: 67%;
+	box-shadow: 0 0 20px 2px #00000052;
 
 	overflow: scroll;
 	-ms-overflow-style: none;
@@ -36,12 +38,20 @@
 	display: none;
 }
 
+#video-container
+{
+	top: 115px;
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+	max-width: 940px;
+	max-height: 700px;
+	margin: auto;
+}
+
 #video
 {
-	width: 660px;
-	position: absolute;
-	left: calc(50% - 330px);
-	bottom: 10px;
+	width: 100%;
 }
 
 #canvas

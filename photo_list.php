@@ -25,7 +25,7 @@
 		for (let i = 0; i < comment_section.length; i++)
 		{
 			comment_section[i].style.top = comment_section[i].previousSibling.height + 20;
-			comment_section[i].children[2].style.height = document.getElementsByClassName('img-container')[0].offsetHeight - parseInt(comment_section[i].style.top, 10) - 24;
+			comment_section[i].children[2].style.height = document.getElementsByClassName('img-container')[0].offsetHeight - (parseInt(comment_section[i].style.top, 10) + document.getElementsByClassName('img-container')[0].offsetWidth * 0.05 + 25);
 		}
 	};
 	$.ajax({
@@ -85,7 +85,7 @@
 					comment.maxLength = "256";
 					img.onload = function() {
 						this.nextSibling.style.top = this.height + 20;
-						this.nextElementSibling.children[2].style.height = document.getElementsByClassName('img-container')[0].offsetHeight - parseInt(this.nextSibling.style.top, 10) - 24;
+						this.nextElementSibling.children[2].style.height = document.getElementsByClassName('img-container')[0].offsetHeight - (parseInt(this.nextSibling.style.top, 10) + document.getElementsByClassName('img-container')[0].offsetWidth * 0.05 + 25);
 						}
 
 					var comment_button = document.createElement("input");

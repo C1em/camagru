@@ -41,7 +41,7 @@
 			<label id="choose-file" for="file">choose a file</label>
 			<input id="upload-image" type="button" onclick="upload_photo()" value="upload image">
 		</form>
-		<video id="video"></video>
+		<div id="video-container"><video id="video"></video></div>
 		<canvas id="canvas"></canvas>
 	</div>
 	<div id="side">
