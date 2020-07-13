@@ -1,4 +1,4 @@
-# camgru
+# camagru
 
 Camagru is an "instagram like" website on which you can take photos, add stickers and post them.
 
